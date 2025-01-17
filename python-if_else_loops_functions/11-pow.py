@@ -4,5 +4,5 @@ def pow(a, b):
     for _ in range(abs(b)):
         result *= a
     if b < 0:
-        return 1 / result
+        result = 1 / result
     return result
