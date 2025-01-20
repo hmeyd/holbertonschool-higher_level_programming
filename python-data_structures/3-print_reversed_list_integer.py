@@ -4,3 +4,7 @@ def print_reversed_list_integer(my_list=[]):
     while i >= 0:
         print(my_list[i])
         i -= 1
+
+
+my_list = [1, 2, 7, 4, 10]
+print_reversed_list_integer(my_list)
