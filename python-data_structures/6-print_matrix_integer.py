@@ -7,11 +7,3 @@ def print_matrix_integer(matrix=[[]]):
             else:
                 print("{:d}".format(matrix[i][j]), end="")
         print()
-
-matrix = [
-    [1]
-]
-
-print_matrix_integer(matrix)
-print("--")
-print_matrix_integer()
