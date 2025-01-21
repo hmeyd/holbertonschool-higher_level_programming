@@ -8,14 +8,8 @@ def roman_to_int(roman_string):
         if i < len(roman_string) - 1:
             if roman_string[i] == "I" and (roman_string[i + 1] == "V" or roman_string[i + 1]  == "X"):
                 sum = sum + R_list[roman_string[i]] - 2
-                i = i + 1
             else:
                 sum = sum + R_list[roman_string[i]]
         else:
             sum = sum + R_list[roman_string[i]]
     return(sum)
-
-
-
-
-
