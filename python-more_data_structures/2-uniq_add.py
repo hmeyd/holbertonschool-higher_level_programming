@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def uniq_add(my_list=[]):
     sum = 0
-    for i in range(len(my_list)):
+    for i in my_list:
         k = 1
         for j in range(i):
             if my_list[j] == my_list[i]:
