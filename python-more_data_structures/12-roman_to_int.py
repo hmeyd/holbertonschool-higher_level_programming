@@ -2,7 +2,6 @@
 def roman_to_int(roman_string):
     if not isinstance(roman_string, str) or roman_string is None:
         return 0
-    
     sum = 0
     R_list = {
         "I": 1, "V": 5, "X": 10, "L": 50,
