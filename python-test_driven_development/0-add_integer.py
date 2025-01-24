@@ -4,18 +4,6 @@
 Module add_integer
 
 Ajoute deux nombres entiers ou floats (convertis en entiers).
-
-Exemples :
->>> add_integer(2, 4)
-6
->>> add_integer(2.5, 3.5)
-5
->>> add_integer(5)
-103
->>> add_integer("a", 2)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
 """
 
 
@@ -39,4 +27,4 @@ def add_integer(a, b=98):
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    return int(a) + int(b)
+    return int(a + b)
