@@ -1,4 +1,12 @@
 #!/usr/bin/python3
+"""
+This module provides a function that divides all elements of a matrix.
+The matrix must be a list of lists of integers or floats.
+Each row of the matrix must be of the same size.
+"div" must be a number (integer or float) but not 0.
+"""
+
+
 def matrix_divided(matrix, div):
     """
     Divides all elements of a matrix by a given divisor.
