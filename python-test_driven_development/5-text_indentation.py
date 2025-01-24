@@ -13,27 +13,27 @@ def text_indentation(text):
     chaque occurrence de '.', '?', ou ':'.
 
     Arguments:
-    text (str): Le texte à afficher.
+        text (str): Le texte à afficher.
 
     Lève:
         TypeError: Si text n'est pas une chaîne de caractères.
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+
     delimiters = ['.', '?', ':']
-    new_text = ""
-    skip_spaces = True
+    i = 0
+    while i < len(text):
+        char = text[i]
 
-    for char in text:
-        if skip_spaces and char == ' ':
+        # Ignorer les espaces en début de ligne
+        if char == ' ' and (i == 0 or text[i - 1] in delimiters):
+            i += 1
             continue
-        skip_spaces = False
 
-        new_text += char
+        print(char, end="")
         if char in delimiters:
-            print(new_text, end="\n\n")
-            new_text = ""
-            skip_spaces = True
-
-    if new_text:
-        print(new_text)
+            print("\n")
+            while i + 1 < len(text) and text[i + 1] == ' ':
+                i += 1
+        i += 1
