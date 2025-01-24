@@ -18,6 +18,7 @@ Traceback (most recent call last):
 TypeError: a must be an integer
 """
 
+
 def add_integer(a, b=98):
     """
     Ajoute deux entiers ou floats.
