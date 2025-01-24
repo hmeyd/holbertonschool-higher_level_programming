@@ -40,7 +40,10 @@ def matrix_divided(matrix, div):
     if not all(len(row) == len(matrix[0]) for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
     if not isinstance(div, (int, float)):
-        raise TypeError("div must be a number")
+        raise TypeError("div must be a number") 
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    return [[round(element / div, 2) for element in row] for row in matrix]
+    new_matrix = []
+    for i in matrix:
+        new_matrix.append(list(map(lambda x: round(x / div, 2), i)))
+    return new_matrix

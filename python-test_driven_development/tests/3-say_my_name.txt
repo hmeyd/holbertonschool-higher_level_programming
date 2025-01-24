@@ -1,0 +1,31 @@
+Test cases for say_my_name function
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test first_name and last_name
+>>> say_my_name("Alice", "Johnson")
+My name is Alice Johnson
+
+---------------------------------
+Test only first_name
+>>> say_my_name("Eve")
+My name is Eve
+
+---------------------------------
+Test if first_name is a float
+>>> say_my_name(12.5, "Brown")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+---------------------------------
+Test if last_name is a float
+>>> say_my_name("Tom", 30.7)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+---------------------------------
+Test if both first_name and last_name are empty
+>>> say_my_name("", "")
+My name is  
