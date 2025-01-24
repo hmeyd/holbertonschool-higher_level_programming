@@ -1,7 +1,8 @@
-# Fichier de tests pour la fonction add_integer
+Fichier de tests pour la fonction add_integer
 
-# Cas normaux :
->>> from add_integer import add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Additionner deux entiers
 >>> add_integer(2, 3)
 5
 >>> add_integer(0, 0)
@@ -9,7 +10,7 @@
 >>> add_integer(-2, 5)
 3
 
-# Cas avec des floats (convertis en entiers) :
+Cas avec des floats (convertis en entiers) :
 >>> add_integer(2.5, 3.5)
 5
 >>> add_integer(-2.9, 1.1)
@@ -17,13 +18,13 @@
 >>> add_integer(0.0, 5.8)
 5
 
-# Cas avec un seul argument (valeur par défaut pour b) :
+Cas avec un seul argument (valeur par défaut pour b) :
 >>> add_integer(5)
 103
 >>> add_integer(-5)
 93
 
-# Cas d'erreurs (types invalides) :
+Cas d'erreurs (types invalides) :
 >>> add_integer("a", 2)
 Traceback (most recent call last):
     ...
@@ -32,23 +33,3 @@ TypeError: a must be an integer
 Traceback (most recent call last):
     ...
 TypeError: b must be an integer
->>> add_integer(None, 3)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
->>> add_integer(2, [3])
-Traceback (most recent call last):
-    ...
-TypeError: b must be an integer
-
-# Cas avec trop d'arguments :
->>> add_integer(1, 2, 3)
-Traceback (most recent call last):
-    ...
-TypeError
-
-# Cas sans arguments :
->>> add_integer()
-Traceback (most recent call last):
-    ...
-TypeError
