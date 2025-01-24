@@ -1,68 +1,59 @@
-# Test cases for the text_indentation function
+Test cases for text_indentation function
 
-text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation = __import__('5-text_indentation').text_indentation
 
-# Test avec une chaîne contenant plusieurs phrases
-print("Test avec une chaîne contenant plusieurs phrases:")
-text_indentation("Bonjour! Comment ça va? Tout va bien. On se voit demain: parfait.")
-print("\n" + "-" * 40)
+Test string with delimiters
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo?
+<BLANKLINE>
+Utrum igitur tibi litteram videor an totas paginas commovere?
+<BLANKLINE>
+Non autem hoc:
+<BLANKLINE>
+igitur ne illud quidem
 
-# Test avec une chaîne contenant des espaces inutiles
-print("Test avec une chaîne contenant des espaces inutiles:")
-text_indentation("  Cela commence ici. Ensuite: on continue ? Enfin, on termine.  ")
-print("\n" + "-" * 40)
+-------------------------------
+Test if <text> is None
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
 
-# Test avec une chaîne vide
-print("Test avec une chaîne vide:")
-try:
-    text_indentation("")
-except ValueError as e:
-    print(e)
-print("\n" + "-" * 40)
+-------------------------------
+Test if <text> is an integer
+>>> text_indentation(13)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
 
-# Test si `text` est None
-print("Test si `text` est None:")
-try:
-    text_indentation(None)
-except TypeError as e:
-    print(e)
-print("\n" + "-" * 40)
+-------------------------------
+Test if <text> is a character
+>>> text_indentation('H')
+H
 
-# Test si `text` est un nombre entier
-print("Test si `text` est un nombre entier:")
-try:
-    text_indentation(42)
-except TypeError as e:
-    print(e)
-print("\n" + "-" * 40)
+-------------------------------
+Test if <text> is a character .
+>>> text_indentation('.')
+.
+<BLANKLINE>
 
-# Test avec un seul caractère sans délimiteur
-print("Test avec un seul caractère sans délimiteur:")
-text_indentation("A")
-print("\n" + "-" * 40)
+-------------------------------
+Test if <text> is a character ?
+>>> text_indentation('?')
+?
+<BLANKLINE>
 
-# Test avec un seul délimiteur (par exemple '.')
-print("Test avec un seul délimiteur (par exemple '.'):")
-text_indentation(".")
-print("\n" + "-" * 40)
+-------------------------------
+Test if <text> is a character ?
+>>> text_indentation(':')
+:
+<BLANKLINE>
 
-# Test avec plusieurs délimiteurs consécutifs
-print("Test avec plusieurs délimiteurs consécutifs:")
-text_indentation("Bonjour... Comment ça va?? Tout va bien:: Super!")
-print("\n" + "-" * 40)
-
-# Test avec une chaîne contenant uniquement des espaces
-print("Test avec une chaîne contenant uniquement des espaces:")
-try:
-    text_indentation("     ")
-except ValueError as e:
-    print(e)
-print("\n" + "-" * 40)
-
-# Test si aucun argument n'est passé
-print("Test si aucun argument n'est passé:")
-try:
-    text_indentation()
-except TypeError as e:
-    print(e)
-print("\n" + "-" * 40)
+-------------------------------
+Test if no argument passed
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
