@@ -20,6 +20,7 @@ TypeError: a must be an integer
 
 
 def add_integer(a, b=98):
+
     """
     Ajoute deux entiers ou floats.
 
@@ -39,3 +40,8 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
 
     return int(a) + int(b)
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
