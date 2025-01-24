@@ -1,37 +1,54 @@
-# Tests pour la fonction add_integer
+# Fichier de tests pour la fonction add_integer
 
-## Test 1 : Addition de deux entiers positifs
-Input: add_integer(2, 3)
-Expected Output: 5
+# Cas normaux :
+>>> from add_integer import add_integer
+>>> add_integer(2, 3)
+5
+>>> add_integer(0, 0)
+0
+>>> add_integer(-2, 5)
+3
 
-## Test 2 : Addition d'un entier positif et d'un entier négatif
-Input: add_integer(-2, 3)
-Expected Output: 1
+# Cas avec des floats (convertis en entiers) :
+>>> add_integer(2.5, 3.5)
+5
+>>> add_integer(-2.9, 1.1)
+-1
+>>> add_integer(0.0, 5.8)
+5
 
-## Test 3 : Addition de deux floats (doivent être convertis en entiers)
-Input: add_integer(2.7, 3.4)
-Expected Output: 5
+# Cas avec un seul argument (valeur par défaut pour b) :
+>>> add_integer(5)
+103
+>>> add_integer(-5)
+93
 
-## Test 4 : Mélange d'entiers et de floats
-Input: add_integer(2, 3.5)
-Expected Output: 5
+# Cas d'erreurs (types invalides) :
+>>> add_integer("a", 2)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(2, "b")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_integer(None, 3)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(2, [3])
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
 
-## Test 5 : Utilisation de la valeur par défaut pour `b`
-Input: add_integer(10)
-Expected Output: 108
+# Cas avec trop d'arguments :
+>>> add_integer(1, 2, 3)
+Traceback (most recent call last):
+    ...
+TypeError
 
-## Test 6 : Entrées invalides (chaîne de caractères pour `a`)
-Input: add_integer("10", 5)
-Expected Output: TypeError: a must be an integer
-
-## Test 7 : Entrées invalides (liste pour `b`)
-Input: add_integer(5, [1, 2])
-Expected Output: TypeError: b must be an integer
-
-## Test 8 : Aucun argument fourni
-Input: add_integer()
-Expected Output: TypeError
-
-## Test 9 : Trop d'arguments fournis
-Input: add_integer(1, 2, 3)
-Expected Output: TypeError
+# Cas sans arguments :
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError
