@@ -14,13 +14,9 @@ def say_my_name(first_name, last_name=""):
         first_name (str): Le prénom.
         last_name (str, optionnel): Le nom de famille.
     Par défaut, une chaîne vide.
-
-    Lève:
-        TypeError: Si first_name ou last_name n'est pas
-    une chaîne de caractères.
     """
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):
         raise TypeError("last_name must be a string")
-    print(f"Mon nom est {first_name} {last_name}")
+    print("My name is {:s} {:s}".format(first_name, last_name))
