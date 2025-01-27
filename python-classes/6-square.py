@@ -1,16 +1,5 @@
 class Square:
-    """
-    Classe pour définir un carré avec une taille et une position optionnelle.
-    """
-
     def __init__(self, size=0, position=(0, 0)):
-        """
-        Initialise un carré avec une taille et une position.
-s
-        Args:
-            size (int): Taille du côté du carré (doit être >= 0).
-            position (tuple): Position (décalage) sous forme de tuple (x, y).
-        """
         self.size = size
         self.position = position
 
@@ -32,28 +21,22 @@ s
 
     @position.setter
     def position(self, value):
-        if (
-            not isinstance(value, tuple) or
-            len(value) != 2 or
-            not all(isinstance(n, int) and n >= 0 for n in value)
-        ):
+        if not isinstance(value, tuple) or len(value) != 2 or not all(isinstance(num, int) and num >= 0 for num in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def area(self):
-        """
-        Retourne l'aire du carré.
-        """
         return self.__size ** 2
 
     def my_print(self):
-        """
-        Affiche une représentation du carré en utilisant '#' et
-        tient compte de la position (décalage).
-        """
-        if self.size == 0:
+        if self.__size == 0:
             print("")
             return
-        for _ in range(self.size):
-            print(" " * self.position[0], end="")
-            print("#" * self.size)
+        for _ in range(self.__position[1]):
+            print("")
+        for _ in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size)
+
+# Example usage:
+square = Square(3, (1, 2))
+square.my_print()
