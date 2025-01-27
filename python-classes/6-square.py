@@ -54,7 +54,6 @@ s
         if self.size == 0:
             print("")
             return
-        print("\n" * self.position[1], end="")
         for _ in range(self.size):
             print(" " * self.position[0], end="")
             print("#" * self.size)
