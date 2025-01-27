@@ -13,6 +13,6 @@ class Square:
     Attributs :
         oject has non attribute 'size'.
     """
-    def __init__(self, height=0, width=0):
-        self.height = height
-        self.width = width
+    def __init__(self, size=0):
+
+        self.__size = size
