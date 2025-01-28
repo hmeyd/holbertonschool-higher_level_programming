@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class Square:
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
@@ -36,7 +37,3 @@ class Square:
             print("")
         for _ in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
-
-# Example usage:
-square = Square(3, (1, 2))
-square.my_print()
