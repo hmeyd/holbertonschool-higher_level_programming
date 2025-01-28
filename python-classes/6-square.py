@@ -1,6 +1,8 @@
-#!/usr/bin/python3
 class Square:
+    """A class that defines a square."""
+    
     def __init__(self, size=0, position=(0, 0)):
+        """Initialize the square with a size and position."""
         self.size = size
         self.position = position
 
@@ -10,6 +12,7 @@ class Square:
 
     @size.setter
     def size(self, value):
+        
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -18,22 +21,34 @@ class Square:
 
     @property
     def position(self):
+    
         return self.__position
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple) or len(value) != 2 or not all(isinstance(num, int) and num >= 0 for num in value):
+        
+        if (
+            not isinstance(value, tuple) or 
+            len(value) != 2 or 
+            not all(isinstance(num, int) and num >= 0 for num in value)
+        ):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def area(self):
+        
         return self.__size ** 2
 
     def my_print(self):
+        
         if self.__size == 0:
             print("")
             return
+
+        # Print the vertical offset (position[1] newlines)
         for _ in range(self.__position[1]):
             print("")
+
+        # Print the square rows with horizontal offset
         for _ in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
