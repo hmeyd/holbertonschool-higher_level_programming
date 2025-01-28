@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 Ce module fournit une classe Rectangle pour représenter des Rectangle.
-La classe Rectangle permet de manipuler et de calculer des propriétés des Rectangle.
+La classe Rectangle permet de manipuler et de calculer des propriétés
+des Rectangle.
 """
 
 
