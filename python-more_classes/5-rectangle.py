@@ -121,5 +121,6 @@ class Rectangle:
             str: A string that can be used to recreate the rectangle.
         """
         return f"Rectangle({self.__width}, {self.__height})"
+
     def __printbye__(self):
         print("Bye rectangle...")
