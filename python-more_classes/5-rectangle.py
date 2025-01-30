@@ -123,4 +123,7 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __printbye__(self):
+        """
+        Prints a message when an instance of Rectangle is deleted.
+        """
         print("Bye rectangle...")
