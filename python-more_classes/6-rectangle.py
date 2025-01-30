@@ -14,6 +14,8 @@ class Rectangle:
         width (int): La largeur du rectangle.
         height (int): La hauteur du rectangle.
     """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """
         Initialise un rectangle avec une largeur et une hauteur.
