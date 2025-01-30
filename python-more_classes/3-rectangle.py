@@ -101,3 +101,15 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return 0
         return 2 * (self.__height + self.__width)
+
+    def __str__(self):
+        """
+        Affiche le rectangle avec des caractères `#`.
+        Si la largeur ou la hauteur est 0, la méthode n'affiche rien.
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        rectangle_str = []
+        for _ in range(self.__height):
+            rectangle_str.append("#" * self.__width)
+        return "\n".join(rectangle_str)
