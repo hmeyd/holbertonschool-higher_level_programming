@@ -25,8 +25,8 @@ class Rectangle:
             Getter pour l'attribut privé `__width`.
         """
         return self.__width
-    @width.setter
 
+    @width.setter
     def width(self, value):
         """
         Setter pour l'attribut privé `__width` avec des vérifications.
@@ -45,7 +45,6 @@ class Rectangle:
         return self.__height
 
     @height.setter
-
     def height(self, value):
         """
         Setter pour l'attribut privé `__height` avec des vérifications.
