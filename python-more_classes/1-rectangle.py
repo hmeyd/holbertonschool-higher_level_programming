@@ -15,7 +15,7 @@ class Rectangle:
         Aucun pour le moment (c'est un exemple minimal).
     """
     def __init__(self, width=0, height=0):
-    
+
         self.width = width
         self.height = height
 
@@ -23,9 +23,10 @@ class Rectangle:
     def width(self):
         """
             Getter pour l'attribut privé `__width`.
-        """ 
+        """
         return self.__width
     width.setter
+
     def width(self, value):
         """
         Setter pour l'attribut privé `__width` avec des vérifications.
@@ -39,10 +40,12 @@ class Rectangle:
     @property
     def height(self):
         """
-            Getter pour l'attribut privé `__height`.
-        """ 
+        Getter pour l'attribut privé `__height`.
+        """
         return self.__height
+
     height.setter
+
     def height(self, value):
         """
         Setter pour l'attribut privé `__height` avec des vérifications.
