@@ -1,32 +1,70 @@
-Test du fichier my_list.py
+Test cases for print_sorted function
 
 >>> MyList = __import__('1-my_list').MyList
 
-
-# Création d'une instance de MyList
 >>> my_list = MyList()
-
-# Ajout de nombres à la liste
->>> my_list.append(5)
 >>> my_list.append(1)
 >>> my_list.append(4)
->>> my_list.append(3)
 >>> my_list.append(2)
-
-# Affichage de la liste normale
->>> print("Liste originale :", my_list)
-
-# Affichage de la liste triée
->>> print("Liste triée :")
+>>> my_list.append(3)
+>>> my_list.append(5)
 >>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
 
-# Vérification que la liste originale n'est pas modifiée
->>> print("Liste après print_sorted :", my_list)
+----
 
-# Ajout de nouveaux éléments et re-test
->>> my_list.append(10)
->>> my_list.append(-1)
-
->>> print("Liste mise à jour :", my_list)
->>> print("Liste triée après ajout :")
+>>> my_list = MyList([1, 4, 2, 3, 5])
 >>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+----
+
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+----
+
+>>> my_list = MyList()
+>>> my_list += [7]
+>>> my_list.print_sorted()
+[7]
+
+----
+
+>>> my_list = MyList()
+>>> isinstance(my_list, list)
+True
+
+----
+
+>>> my_list = MyList(None)
+Traceback (most recent call last):
+...
+TypeError: 'NoneType' object is not iterable
+
+----
+
+>>> my_list = MyList([1, 2, "School"])
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+----
+
+>>> my_list = MyList([1, 2], [3, 4])
+Traceback (most recent call last):
+...
+TypeError: list expected at most 1 argument, got 2
+
+----
+
+>>> other_list.print_sorted()
+Traceback (most recent call last):
+...
+NameError: name 'other_list' is not defined
