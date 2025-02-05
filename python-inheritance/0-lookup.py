@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-Ce module fournit une fonction pour retourner la liste des attributs et méthodes d'un objet.
+Ce module fournit une fonction pour retourner la liste des
+attributs et méthodes d'un objet.
 """
+
 
 def lookup(obj):
     """
