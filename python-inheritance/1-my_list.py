@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Module for MyList class."""
+
+
 class MyList(list):
     """Classe qui hérite de list et ajoute une méthode
     pour afficher une liste triée.
