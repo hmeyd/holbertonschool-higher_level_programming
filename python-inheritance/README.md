@@ -1,7 +1,3 @@
-Voici un exemple de fichier `README.md` pour votre projet, basé sur les informations que vous avez fournies. Ce fichier décrit le projet, les objectifs d'apprentissage, les exigences, et les tâches à accomplir.
-
----
-
 # Python Inheritance Project
 
 This project focuses on understanding and implementing inheritance in Python. It covers concepts such as superclasses, subclasses, method overriding, and the use of built-in functions like `isinstance`, `issubclass`, `type`, and `super`.
@@ -185,7 +181,3 @@ print(s.area()) # Output: 169
 
 - GitHub Repository: [holbertonschool-higher_level_programming](https://github.com/holbertonschool/holbertonschool-higher_level_programming)
 - Directory: `python-inheritance`
-
----
-
-Ce fichier `README.md` fournit une vue d'ensemble complète du projet, des objectifs, des exigences et des tâches à accomplir. Vous pouvez l'adapter en fonction de vos besoins spécifiques.
