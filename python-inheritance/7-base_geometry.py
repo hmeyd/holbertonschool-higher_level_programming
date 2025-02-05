@@ -9,7 +9,8 @@ class BaseGeometry:
     raises an Exception
     """
     def area(self):
-        raise Exception("area() is not implemented")
+        if self:
+            raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """raise a TypeError exception"""
