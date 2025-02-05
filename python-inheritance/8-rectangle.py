@@ -1,18 +1,25 @@
 #!/usr/bin/python3
 """
-a class Rectangle that inherits from BaseGeometry (7-base_geometry.py)
+A class Rectangle that inherits from BaseGeometry (7-base_geometry.py).
 """
+
+# Importation de BaseGeometry depuis 7-base_geometry.py
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-class rectangle(BaseGeometry):
+class Rectangle(BaseGeometry):
     """
-    raises an Exception
+    A Rectangle class that inherits from BaseGeometry.
     """
+
     def __init__(self, width, height):
-        """validated by integer_validator"""
+        """
+        Initializes a Rectangle instance.
+        """
+        """Validation des valeurs"""
         self.integer_validator("width", width)
         self.integer_validator("height", height)
 
+        """ Attributs privés"""
         self.__width = width
         self.__height = height
