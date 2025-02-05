@@ -1,0 +1,32 @@
+# Test du fichier my_list.py
+
+# Importation de la classe MyList
+from my_list import MyList
+
+# Création d'une instance de MyList
+my_list = MyList()
+
+# Ajout de nombres à la liste
+my_list.append(5)
+my_list.append(1)
+my_list.append(4)
+my_list.append(3)
+my_list.append(2)
+
+# Affichage de la liste normale
+print("Liste originale :", my_list)
+
+# Affichage de la liste triée
+print("Liste triée :")
+my_list.print_sorted()
+
+# Vérification que la liste originale n'est pas modifiée
+print("Liste après print_sorted :", my_list)
+
+# Ajout de nouveaux éléments et re-test
+my_list.append(10)
+my_list.append(-1)
+
+print("Liste mise à jour :", my_list)
+print("Liste triée après ajout :")
+my_list.print_sorted()
