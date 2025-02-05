@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 class MyList(list):
+    """Classe qui hérite de list et ajoute une méthode
+    pour afficher une liste triée.
+    """
+
     def print_sorted(self):
-        # Create a sorted copy of the list and print it
-        sorted_list = sorted(self)
-        print(sorted_list)
+        """Affiche la liste triée sans modifier la liste originale.
+        """
+        print(sorted(self))
