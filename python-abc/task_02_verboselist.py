@@ -27,7 +27,7 @@ class VerboseList(list):
         """
         count = len(iterable)
         super().extend(iterable)
-        print(f"Extended the list with [{count}] items.")
+        print("Extended the list with [{}] items.".format(count))
 
     def remove(self, item):
         """
