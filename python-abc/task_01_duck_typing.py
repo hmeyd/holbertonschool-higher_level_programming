@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""
-Module définissant une classe abstraite Shape et ses sous-classes
-Circle et Rectangle.
-"""
-
+""" Duck Typing """
 from abc import ABC, abstractmethod
 import math
 
@@ -12,7 +8,6 @@ class Shape(ABC):
     """
     Classe abstraite
     """
-
     @abstractmethod
     def area(self):
         """Méthode abstraite pour calculer l'aire de la forme."""
@@ -44,7 +39,7 @@ class Circle(Shape):
 
     def perimeter(self):
         """Retourne le périmètre du cercle."""
-        return 2 * math.pi * self.__radius
+        return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
@@ -81,4 +76,3 @@ def shape_info(shape):
     """
     print("Aire: {}".format(shape.area()))
     print("Périmètre:{}".format(shape.perimeter()))
-    print("=" * 35)
