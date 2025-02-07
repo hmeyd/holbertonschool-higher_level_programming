@@ -43,22 +43,10 @@ class VerboseList(list):
             print(f"Error: Item [{item}] not found in the list.")
         else:
             super().remove(item)
-            print("Removed [{item}] from the list.")
+            print("Removed [{}] from the list.".format(item))
 
-    def pop(self, index=-1):
-        """
-        Supprime et retourne l'élément à l'index donné et affiche un message.
-
-        Args:
-            index (int, optional): L'index de l'élément à supprimer.
-                                   Par défaut, supprime le dernier élément.
-
-        Returns:
-            L'élément supprimé.
-
-        Raises:
-            IndexError: Si la liste est vide ou si l'index est hors limites.
-        """
-        if len(self) == 0:
-            print("Error: Cannot pop from an empty list.")
-            return None
+    def pop(self, item=-1):
+        if not (-len(self) <= item < len(self)):
+            raise IndexError("index out of range")
+        print("Popped [{}] from the list.".format(self[item]))
+        return super().pop(item)
