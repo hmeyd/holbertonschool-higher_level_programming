@@ -7,19 +7,16 @@ Elle affiche des messages à chaque modification de la liste.
 
 class VerboseList(list):
     """
-    Classe qui hérite de list et affiche des messages
-    lorsqu'on ajoute ou supprime des éléments.
+    Classe qui hérite de list
     """
 
     def append(self, item):
         """
         Ajoute un élément à la liste et affiche un message.
 
-        Args:
-            item: L'élément à ajouter.
         """
         super().append(item)
-        print(f"Added [{item}] to the list.")
+        print("Added [{}] to the list.".format(item))
 
     def extend(self, iterable):
         """
