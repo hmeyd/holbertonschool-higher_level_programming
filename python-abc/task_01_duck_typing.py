@@ -83,3 +83,4 @@ def shape_info(shape):
     """
     print("Aire: {}".format(shape.area()))
     print("Périmètre:{}".format(shape.perimeter()))
+    print("=" * 35)
