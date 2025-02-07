@@ -68,11 +68,6 @@ class Rectangle(Shape):
 
 
 def shape_info(shape):
-    """
-    Fonction affichant l'aire et le périmètre d'une forme géométrique.
-
-    Args:
-        shape (Shape): Une instance d'une sous-classe de Shape.
-    """
+    """ Shape info function """
     print("Area: {}".format(shape.area()))
-    print("Perimeter:{}".format(shape.perimeter()))
+    print("Perimeter: {}".format(shape.perimeter()))
