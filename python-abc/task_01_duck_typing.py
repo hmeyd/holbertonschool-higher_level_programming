@@ -10,9 +10,7 @@ import math
 
 class Shape(ABC):
     """
-    Classe abstraite représentant une forme géométrique.
-    Les sous-classes doivent implémenter les méthodes
-    `area()` et `perimeter()`.
+    Classe abstraite
     """
 
     @abstractmethod
@@ -38,7 +36,7 @@ class Circle(Shape):
         Args:
             radius (float): Le rayon du cercle (doit être positif).
         """
-        self.__radius = radius
+        self.__radius = abs(radius)
 
     def area(self):
         """Retourne l'aire du cercle."""
@@ -62,16 +60,16 @@ class Rectangle(Shape):
             width (float): La largeur du rectangle (doit être positive).
             height (float): La hauteur du rectangle (doit être positive).
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     def area(self):
         """Retourne l'aire du rectangle."""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         """Retourne le périmètre du rectangle."""
-        return 2 * (self.__width + self.__height)
+        return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
