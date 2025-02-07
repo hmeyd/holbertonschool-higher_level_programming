@@ -43,7 +43,7 @@ class VerboseList(list):
             print(f"Error: Item [{item}] not found in the list.")
         else:
             super().remove(item)
-            print(f"Removed [{item}] from the list.")
+            print("Removed [{item}] from the list.")
 
     def pop(self, index=-1):
         """
