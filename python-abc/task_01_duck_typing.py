@@ -38,8 +38,6 @@ class Circle(Shape):
         Args:
             radius (float): Le rayon du cercle (doit être positif).
         """
-        if radius <= 0:
-            raise ValueError("Le rayon doit être un nombre positif")
         self.__radius = radius
 
     def area(self):
@@ -64,8 +62,6 @@ class Rectangle(Shape):
             width (float): La largeur du rectangle (doit être positive).
             height (float): La hauteur du rectangle (doit être positive).
         """
-        if width <= 0 or height <= 0:
-            raise ValueError("La largeur et la h doivent être es n positifs")
         self.__width = width
         self.__height = height
 
