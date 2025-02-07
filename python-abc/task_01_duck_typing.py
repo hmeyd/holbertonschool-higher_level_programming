@@ -75,4 +75,5 @@ def shape_info(shape):
         shape (Shape): Une instance d'une sous-classe de Shape.
     """
     print("Area: {}".format(shape.area()))
-    print("Perimeter: {}".format(shape.perimeter()))
+    print("Perimeter:{}".format(shape.perimeter()))
+    
