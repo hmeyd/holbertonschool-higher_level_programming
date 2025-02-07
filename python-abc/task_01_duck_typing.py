@@ -31,15 +31,15 @@ class Circle(Shape):
         Args:
             radius (float): Le rayon du cercle (doit être positif).
         """
-        self.__radius = abs(radius)
+        self.radius = abs(radius)
 
     def area(self):
         """Retourne l'aire du cercle."""
-        return math.pi * self.__radius ** 2
+        return math.pi * self.radius ** 2
 
     def perimeter(self):
         """Retourne le périmètre du cercle."""
-        return 2 * math.pi * self.__radius
+        return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
