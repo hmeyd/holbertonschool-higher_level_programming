@@ -3,6 +3,7 @@
 Module that contains the function write_file.
 """
 
+
 def write_file(filename="", text=""):
     """
     Writes a text in a UTF-8 text file.
