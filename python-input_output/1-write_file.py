@@ -6,14 +6,14 @@ Module that contains the function write_file.
 
 def write_file(filename="", text=""):
     """
-    write a text UTF-8 text file.
+    Writes a text in a UTF-8 text file.
 
     Args:
-        filename (str): The name of the file to be write.
-    Default is an empty string.
+        filename (str): The name of the file to be written.
+        text (str): The content to write in the file.
 
     Returns:
-        None
+        int: The number of characters written.
     """
     with open(filename, "w", encoding="utf-8") as f:
         print(f.write(text), end="")
