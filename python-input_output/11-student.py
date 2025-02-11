@@ -19,9 +19,11 @@ class Student:
                 if key in attrs:
                     my_list[key] = self.__dict__[key]
         return my_list
+
     def reload_from_json(self, json):
         """
-        Replaces all attributes of the instance with values from the `json` dictionary.
+        Replaces all attributes of the instance with values
+        from the `json` dictionary.
         """
         for key, value in json.items():
             if hasattr(self, key):
