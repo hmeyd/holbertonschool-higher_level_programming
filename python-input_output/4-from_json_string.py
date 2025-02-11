@@ -6,4 +6,5 @@ import json
 
 
 def to_json_string(my_str):
+    """Convertit objet Python à une chaîne JSON."""
     return json.loads(my_str)
