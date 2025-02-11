@@ -8,11 +8,11 @@ import pickle
 
 class CustomObject:
     """This class should have the following attributes"""
-    def __init__(self, first_name, last_name, age):
+    def __init__(self, name: str, age: int, is_student: bool):
         """fuction qui initialise le valeur"""
-        self.first_name = first_name
-        self.last_name = last_name
+        self.name = name
         self.age = age
+        self.is_student = is_student
 
     def serialize(self, filename):
         """serialize"""
