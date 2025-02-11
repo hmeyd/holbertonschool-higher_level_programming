@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """
-Function that returns an object (Python data structure)
-represented by a JSON string
+Function that returns the JSON representation of an object (string).
 """
 import json
 
 
-def from_json_string(my_str):
-    """Convertit une chaîne JSON en objet Python."""
-    return json.dumps(my_str)
+def to_json_string(my_obj):
+    """Convertit un objet Python en chaîne JSON."""
+    return json.dumps(my_obj)
