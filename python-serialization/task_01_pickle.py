@@ -14,6 +14,14 @@ class CustomObject:
         self.age = age
         self.is_student = is_student
 
+    def display(self):
+        """
+        Affiche les attributs de l'objet sous un format structuré.
+        """
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+        print(f"Is Student: {self.is_student}")
+
     def serialize(self, filename):
         """serialize"""
         with open(filename, "wb") as f:
