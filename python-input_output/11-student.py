@@ -20,4 +20,9 @@ class Student:
                     my_list[key] = self.__dict__[key]
         return my_list
     def reload_from_json(self, json):
-        return json
+        """
+        Replaces all attributes of the instance with values from the `json` dictionary.
+        """
+        for key, value in json.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
