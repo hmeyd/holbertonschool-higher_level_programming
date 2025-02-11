@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-function that returns the dictionary description with simple data structure
+Script that adds all command-line arguments to a Python list
+and saves them to a file in JSON format.
 """
 
 import sys
@@ -12,6 +13,6 @@ filename = "add_item.json"
 if os.path.exists(filename):
     my_list = load_from_json_file(filename)
 else:
-   my_list = []
-   my_list.extend(sys.argv[1:])
-   save_to_json_file(my_list, filename)
+    my_list = []
+my_list.extend(sys.argv[1:])
+save_to_json_file(my_list, filename)
