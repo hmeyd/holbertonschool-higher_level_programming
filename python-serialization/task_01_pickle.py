@@ -30,5 +30,11 @@ class CustomObject:
     @classmethod
     def deserialize(cls, filename):
         """deserialize"""
-        with open(filename, "rb") as f:
-            return pickle.load(f)
+        try:
+            with open(filename, 'rb') as f:
+                obj = pickle.load(f)
+            print(f"Objet désérialisé depuis '{filename}'.")
+            return obj
+        except (FileNotFoundError, pickle.PickleError, EOFError) as e:
+            print(f"Erreur lors de la désérialisation : {e}")
+            return None
