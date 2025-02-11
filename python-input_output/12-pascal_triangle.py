@@ -6,14 +6,13 @@ representing the Pascal s triangle of n
 
 
 def pascal_triangle(n):
-    my_list = {}
+    my_list = []
     if n <= 0:
         my_list
     else:
         for i in range(n):
-            for j in range(i):
-                if j == 1 or j == i:
-                    my_list[i][j] = 1
-                else:
-                    my_list[i][j] = my_list[i - 1][j - 1] + my_list[i - 1][j]
+            row = [1] * (i + 1)
+            for j in range(1, i):
+                row[j] = my_list[i - 1][j - 1] + my_list[i - 1][j]
+                my_list.append(row)
     return my_list
