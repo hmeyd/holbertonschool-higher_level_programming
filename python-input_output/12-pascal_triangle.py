@@ -6,6 +6,7 @@ representing the Pascal s triangle of n
 
 
 def pascal_triangle(n):
+    """Si n <= 0, retourne une liste vide"""
     my_list = []
     if n <= 0:
         my_list
