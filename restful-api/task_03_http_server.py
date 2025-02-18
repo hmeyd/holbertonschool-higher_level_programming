@@ -9,6 +9,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
     """Handler to process GET requests."""
     
     def do_GET(self):
+        """commentaire"""
         response_data = {}  
         if self.path == '/':
             self.send_response(200)
