@@ -13,19 +13,21 @@ class SimpleHandler(BaseHTTPRequestHandler):
         if self.path == '/data':
             response_data = {"name": "John", "age": 30, "city": "New York"}
             self.send_response(200)
-            self.send_header("Content-type", "application/json")
+            self.send_header("Content-type", "application/json; charset=utf-8")
             self.end_headers()
             self.wfile.write(json.dumps(response_data).encode())
         elif self.path == '/status':
             response_data = {"status": "OK"}
             self.send_response(200)
-            self.send_header("Content-type", "application/json")
+            self.send_header("Content-type", "application/json; charset=utf-8")
             self.end_headers()
             self.wfile.write(json.dumps(response_data).encode())
         else:
             self.send_response(404)
+            self.send_header("Content-type", "application/json; charset=utf-8")
             self.end_headers()
-            self.wfile.write(b"Not Found")
+            response_data = {"error": "Not Found"}
+            self.wfile.write(json.dumps(response_data).encode())
 
 
 def run(server_class=HTTPServer, handler_class=SimpleHandler):
