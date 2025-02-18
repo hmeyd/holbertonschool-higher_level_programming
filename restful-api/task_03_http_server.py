@@ -1,16 +1,21 @@
 #!/usr/bin/python3
 """
-Développer une API simple en utilisant le module `http.server` de Python
+Set up a simple HTTP server to serve JSON data and handle different endpoints
 """
 import json
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
-
 class SimpleHandler(BaseHTTPRequestHandler):
-    """Gestionnaire pour traiter les requêtes GET."""
+    """Handler to process GET requests."""
+    
     def do_GET(self):
-        response_data = {}
-        if self.path == '/data':
+        response_data = {}  
+        if self.path == '/':
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain; charset=utf-8")
+            self.end_headers()
+            self.wfile.write("Hello, this is a simple API!".encode())
+        elif self.path == '/data':
             response_data = {"name": "John", "age": 30, "city": "New York"}
             self.send_response(200)
             self.send_header("Content-type", "application/json; charset=utf-8")
@@ -29,10 +34,9 @@ class SimpleHandler(BaseHTTPRequestHandler):
             response_data = {"error": "Not Found"}
             self.wfile.write(json.dumps(response_data).encode())
 
-
 def run(server_class=HTTPServer, handler_class=SimpleHandler):
-    """Exécuter le serveur HTTP."""
+    """Run the HTTP server."""
     server_address = ('', 8000)
     httpd = server_class(server_address, handler_class)
-    print("Le serveur fonctionne sur http://localhost:8000...")
+    print("Server running on http://localhost:8000...")
     httpd.serve_forever()
