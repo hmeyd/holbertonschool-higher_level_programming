@@ -13,7 +13,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
         if self.path == '/data':
             response_data = {"name": "John", "age": 30, "city": "New York"}
             self.send_response(200)
-            self.send_header("Content-type", "text/html")
+            self.send_header("Content-type", "application/json")
             self.end_headers()
             self.wfile.write(json.dumps(response_data).encode())
         else:
