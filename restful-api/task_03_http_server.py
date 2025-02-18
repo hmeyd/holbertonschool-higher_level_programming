@@ -9,7 +9,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
     """Handler to process GET requests."""
     
     def do_GET(self):
-        """commentaire"""
+        """Handle GET requests"""
         response_data = {}  
         if self.path == '/':
             self.send_response(200)
@@ -41,3 +41,6 @@ def run(server_class=HTTPServer, handler_class=SimpleHandler):
     httpd = server_class(server_address, handler_class)
     print("Server running on http://localhost:8000...")
     httpd.serve_forever()
+
+if __name__ == "__main__":
+    run()
