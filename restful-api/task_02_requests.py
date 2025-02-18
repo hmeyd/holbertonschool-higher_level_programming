@@ -26,12 +26,13 @@ def fetch_and_save_posts():
 
     """Fetch posts and save them into a CSV file"""
     url = "https://jsonplaceholder.typicode.com/posts"
-    reponse = requests.get(url)
-    if reponse.status_code == 200:
-        posts = reponse.json()
+    response = requests.get(url)
+    if response.status_code == 200:
+        posts = response.json()
         fieldnames = ["id", "title", "body"]
         with open('posts.csv', mode="w", encoding="utf-8") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
             for post in posts:
                 writer.writerow({"id": post["id"], "title":
                                  post["title"], "body": post["body"]})
