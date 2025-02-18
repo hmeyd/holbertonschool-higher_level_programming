@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-Develop a simple API using Python with the `http.server` module
+Développer une API simple en utilisant le module `http.server` de Python
 """
 import json
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 
 class SimpleHandler(BaseHTTPRequestHandler):
-    """Handler to process GET requests."""
+    """Gestionnaire pour traiter les requêtes GET."""
     def do_GET(self):
         response_data = {}
         if self.path == '/data':
@@ -31,8 +31,8 @@ class SimpleHandler(BaseHTTPRequestHandler):
 
 
 def run(server_class=HTTPServer, handler_class=SimpleHandler):
-    """Run the HTTP server."""
+    """Exécuter le serveur HTTP."""
     server_address = ('', 8000)
     httpd = server_class(server_address, handler_class)
-    print("Server running on http://localhost:8000...")
+    print("Le serveur fonctionne sur http://localhost:8000...")
     httpd.serve_forever()
