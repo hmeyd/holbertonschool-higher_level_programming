@@ -6,26 +6,40 @@ app = Flask(__name__)
 users = {"jane": {"name": "Jane", "age": 28,
                   "city": "Los Angeles"}}
 
+
 @app.route("/", methods=["GET"])
 def home():
-    return  "Welcome to the Flask API!"
+    """home"""
+    return "Welcome to the Flask API!"
+
+
 @app.route("/data", methods=["GET"])
 def get_data():
+    """format json"""
     return jsonify(list(users.keys))
+
+
 @app.route("/status", methods=["GET"])
 def status():
+    """status"""
     return "ok", 200
+
+
 @app.route("/users/<username>", methods=["GET"])
 def get_user(username):
+    """get user"""
     user = user.get(username)
     if user:
         return jsonify(user)
     else:
         return "User not found", 404
+
+
 @app.route("/add_user", methods=["POST"])
 def add_user():
+    """add user"""
     data = request.get_json()
-    username  = data.get("username")
+    username = data.get("username")
     if username in users:
         return "User {} already exists".format(username), 400
     users[username] = {
@@ -34,5 +48,7 @@ def add_user():
         "city": data["city"]
     }
     return jsonify(users[username]), 201
-if __name__== "__main__":
+
+
+if __name__ == "__main__":
     app.run(debug=True)
