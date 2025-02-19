@@ -61,4 +61,5 @@ def add_user():
 
 
 if __name__ == "__main__":
+    """int main"""
     app.run(debug=True)
