@@ -4,7 +4,6 @@ Développer une API simple en utilisant Flask
 """
 from flask import Flask, jsonify, request
 
-
 app = Flask(__name__)
 
 
@@ -18,7 +17,7 @@ users = {
 
 @app.route("/", methods=["GET"])
 def home():
-    """return welcom"""
+    """Route d'accueil"""
     return "Welcome to the Flask API!"
 
 
@@ -36,8 +35,7 @@ def status():
 
 @app.route("/users/<username>", methods=["GET"])
 def get_user(username):
-    """Route dynamique pour récupérer les informations
-    d'un utilisateur"""
+    """Route dynamique pour récupérer les informations d'un utilisateur"""
     user = users.get(username)
     if user:
         return jsonify(user)
@@ -53,13 +51,14 @@ def add_user():
     if username in users:
         return "User {} already exists".format(username), 400
     users[username] = {
+        "username": username,
         "name": data["name"],
         "age": data["age"],
         "city": data["city"]
     }
     return jsonify(users[username]), 201
 
-
 if __name__ == "__main__":
-    """int main"""
+    """Démarrer le serveur Flask"""
     app.run(debug=True)
+
