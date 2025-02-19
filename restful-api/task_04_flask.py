@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+Un script Python basique pour récupérer des posts de
+JSONPlaceholder en utilisant requests
+"""
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
