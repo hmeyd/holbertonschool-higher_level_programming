@@ -4,16 +4,14 @@ Un script Python basique pour récupérer des posts de
 JSONPlaceholder en utilisant requests
 """
 from flask import Flask, jsonify, request
+"""importation"""
+
 
 app = Flask(__name__)
+"""recurement"""
 
 
-users = {
-    "jane": {"username": "jane", "name": "Jane",
-             "age": 28, "city": "Los Angeles"},
-    "john": {"username": "john", "name": "John",
-             "age": 30, "city": "New York"}
-}
+users = {}
 
 
 @app.route("/")
