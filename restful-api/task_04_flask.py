@@ -9,8 +9,10 @@ app = Flask(__name__)
 
 
 users = {
-    "jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"},
-    "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
+    "jane": {"username": "jane", "name": "Jane",
+             "age": 28, "city": "Los Angeles"},
+    "john": {"username": "john", "name": "John",
+             "age": 30, "city": "New York"}
 }
 
 
@@ -19,10 +21,12 @@ def home():
     """home"""
     return "Welcome to the Flask API!"
 
+
 @app.route("/data")
 def data():
     """Return a list of all usernames in the 'users' dictionary"""
     return jsonify(list(users.keys()))
+
 
 @app.route("/status")
 def status():
@@ -46,10 +50,11 @@ def add_user():
     user_data = request.get_json()
     if not user_data or "username" not in user_data:
         return jsonify({"error": "Username is required"}), 400
-    
+
     username = user_data["username"]
     users[username] = user_data
     return jsonify({"message": "User added", "user": user_data}), 201
+
 
 if __name__ == "__main__":
     app.run(debug=True)
