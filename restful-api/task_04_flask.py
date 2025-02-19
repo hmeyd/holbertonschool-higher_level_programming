@@ -1,35 +1,43 @@
-#!usr/bin/python3
-"""Develop a Simple API using Python with Flask"""
+#!/usr/bin/python3
+"""
+Développer une API simple en utilisant Flask
+"""
 from flask import Flask, jsonify, request
 
 
 app = Flask(__name__)
-users = {"jane": {"name": "Jane", "age": 28,
-                  "city": "Los Angeles"}}
+
+
+users = {
+    "jane": {"username": "jane",
+             "name": "Jane", "age": 28, "city": "Los Angeles"},
+    "john": {"username": "john",
+             "name": "John", "age": 30, "city": "New York"}
+}
 
 
 @app.route("/", methods=["GET"])
-
 def home():
-    """home"""
+    """return welcom"""
     return "Welcome to the Flask API!"
 
 
 @app.route("/data", methods=["GET"])
 def get_data():
-    """format json"""
+    """Route pour récupérer les noms d'utilisateurs"""
     return jsonify(list(users.keys()))
 
 
 @app.route("/status", methods=["GET"])
 def status():
-    """status"""
-    return "ok", 200
+    """Route pour vérifier l'état de l'API"""
+    return "OK", 200
 
 
 @app.route("/users/<username>", methods=["GET"])
 def get_user(username):
-    """get user"""
+    """Route dynamique pour récupérer les informations
+    d'un utilisateur"""
     user = users.get(username)
     if user:
         return jsonify(user)
@@ -39,7 +47,7 @@ def get_user(username):
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
-    """add user"""
+    """Route pour ajouter un utilisateur via POST"""
     data = request.get_json()
     username = data.get("username")
     if username in users:
