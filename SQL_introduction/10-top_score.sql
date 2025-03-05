@@ -1,4 +1,4 @@
--- script that lists all records of the table
-SELECT name, score
+-- Les résultats seront triés par score, du plus élevé au plus bas
+SELECT score, name
 FROM second_table
-ORDER BY score;
+ORDER BY score DESC;
