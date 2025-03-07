@@ -1,32 +1,20 @@
 #!/usr/bin/python3
-"""
-Script that lists all states from the database hbtn_0e_0_usa.
-"""
+"""Module that query USA States from a database table"""
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
-    # Récupération des arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
-
-    # Connexion à la base de données
-    db = MySQLdb.connect(host="localhost", port=3306,
-                        user=username, passwd=password,
-                        db=db_name, charset="utf8")
-
-    # Création d'un curseur pour exécuter les requêtes
-    cursor = db.cursor()
-
-    # Exécution de la requête SQL
-    cursor.execute("SELECT * FROM states ORDER BY id ASC;")
-
-    # Récupération et affichage des résultats
-    for state in cursor.fetchall():
-        print(state)
-
-    # Fermeture du curseur et de la connexion
-    cursor.close()
-    db.close()
-    
+    conn = MySQLdb.connect(host="localhost",
+                           port=3306,
+                           user=sys.argv[1],
+                           passwd=sys.argv[2],
+                           db=sys.argv[3],
+                           charset="utf8")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    query_rows = cur.fetchall()
+    for row in query_rows:
+        print(row)
+    cur.close()
+    conn.close()
