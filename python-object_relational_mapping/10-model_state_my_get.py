@@ -4,6 +4,7 @@ import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm.exc import NoResultFound
 
 
 if __name__ == "__main__":
@@ -17,11 +18,10 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    state = session.query(State).filter(State.name == sys.argv[4]).first()
-
-    if state:
-        print("{}".format(state.id))
-    else:
+    try:
+        state = session.query(State.id).filter_by(name=sys.argv[4]).one()
+        print(state[0])
+    except NoResultFound:
         print("Not found")
 
     session.close()
