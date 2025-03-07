@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     query = """
-    SELECT cities.name 
+    SELECT cities.name
     FROM cities
     INNER JOIN states ON cities.state_id = states.id
     WHERE states.name = %s
