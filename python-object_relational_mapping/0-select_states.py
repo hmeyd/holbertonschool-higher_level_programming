@@ -29,3 +29,4 @@ if __name__ == "__main__":
     # Fermeture du curseur et de la connexion
     cursor.close()
     db.close()
+    
