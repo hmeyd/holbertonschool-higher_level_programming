@@ -13,7 +13,8 @@ if __name__ == "__main__":
 
     # Connexion à la base de données
     db = MySQLdb.connect(host="localhost", port=3306,
-                        user=username, passwd=password, db=db_name)
+                        user=username, passwd=password,
+                        db=db_name, charset="utf8")
 
     # Création d'un curseur pour exécuter les requêtes
     cursor = db.cursor()
